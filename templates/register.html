@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <style>
+        .shadow{
+            box-shadow: rgb(241, 235, 235);
+            padding:30px;
+        }
+        body{
+            background-image:url("https://img.freepik.com/free-vector/gradient-technological-background_23-2148884155.jpg?w=826&t=st=1684579717~exp=1684580317~hmac=d2238f3baa468177c1aee1575f7ed36807125bd084217cb83c35a676a9ce8e26");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .s{
+            background-color:rgb(247, 247, 247);
+            border-radius: 12px;
+        }
+        .form-control{
+            border-color: rgb(119, 0, 0);
+            border-radius: 5px;
+        }
+    </style> 
+</head>
+<body >
+    <div class="container" style="margin-top:100px">
+        <div class="col-md-offset-3 col-md-6 s">
+            <div class="shadow">
+                <form method="POST" action="/register" class="con">
+                    <h2 class="page-header text-primary text-center">Registration</h2>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" required>
+                    </div>
+                     <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" name="address" required></textarea>
+                     </div>
+                     <div class="form-group">
+                        <label>Mail</label>
+                        <input type="text" class="form-control" name="mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>password</label>
+                        <input type="text" class="form-control" name="password" required>
+                    </div>
+                     <div class="form-group">
+                        <input type="submit" class="btn btn-success btn-block" value="Register">
+                         <a href="{{url_for('index')}}" class="btn btn-light btn-block">Back to Home</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>
